@@ -8,6 +8,9 @@
     "start": "next start -p 3014",
     "lint": "next lint"
   },
+  "prisma": {
+    "schema": "src/prisma/schema.prisma"
+  },
   "dependencies": {
     "@prisma/client": "^6.6.0",
     "@radix-ui/react-slot": "^1.2.0",
