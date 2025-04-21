@@ -89,6 +89,9 @@ const Navbar = () => {
                   <Link href={'/repertoire'} className="cursor-pointer hover:text-[#e6c78c]">
                     Repertoár
                   </Link>
+                  <Link href={'/actual'} className="cursor-pointer hover:text-[#e6c78c]">
+                    Príď medzi nás
+                  </Link>
 
                   <Link href={'/personages'} className="cursor-pointer hover:text-[#e6c78c]">
                     Osobnosti
@@ -96,23 +99,12 @@ const Navbar = () => {
                   <Link href={'/concerts'} className="cursor-pointer hover:text-[#e6c78c]">
                     Koncerty a podujatia
                   </Link>
-                  {/* <Link href={'/about'} className="cursor-pointer hover:text-[#e6c78c]">
-                    Zájazdy
-                  </Link> */}
+
                   <Link href={'/history'} className="cursor-pointer hover:text-[#e6c78c]">
                     História
                   </Link>
                 </div>
               </div>
-
-              {/* <li>
-                  <Link
-                    href={'/gallery'}
-                    className="cursor-pointer hover:text-[#e6c78c]"
-                  >
-                    Galéria
-                  </Link>
-                </li> */}
 
               <div className="group relative  cursor-pointer">
                 <div className="flex items-center justify-between lg:px-4">

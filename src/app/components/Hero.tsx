@@ -1,5 +1,7 @@
 'use client'
 import Navbar from './Navbar'
+import ConcourseShort from './shorts/ConcourseShort'
+import NewEvents from './shorts/NewEvents'
 
 export default function Hero() {
   return (
@@ -14,10 +16,24 @@ export default function Hero() {
           Technik
         </h2>
       </div>
-      {/* <NewEvents />
-  <MailingList /> */}
 
-      {/* <ConcourseShort /> */}
+      {/* Embed from Facebook ? */}
+
+      {/* <div className="bg-black rounded-lg overflow-hidden flex justify-center">
+        <div className="aspect-video">
+          <iframe
+            src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Forchester.technik%2Fposts%2Fpfbid025E4zJZEA3fswEkAdBtczcsnyDcex3by2Cty8M1CVrQnqxE8Ra1TgfdLEEpM3ZG58l&show_text=true&width=500"
+            width="500"
+            height="787"
+            allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+          ></iframe>
+        </div>
+      </div> */}
+
+      <NewEvents />
+      {/* <MailingList /> */}
+
+      <ConcourseShort />
     </main>
   )
 }

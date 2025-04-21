@@ -13,7 +13,7 @@ const Audio = () => {
     },
     {
       id: 'cd2',
-      images: ['/cd_2_1.png', '/cd_2_2.png', '/cd_2_3.png'],
+      images: ['/cd_2_1.png', '/cd_2_3.png', '/cd_2_2.png'],
     },
   ]
 

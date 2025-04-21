@@ -1,5 +1,23 @@
 @import 'tailwindcss';
 
+:root {
+  --brown-gradient: linear-gradient(to right, #3a2213, #6e4122, #a05a2c);
+  --button-gradient: linear-gradient(to top, #7b3b13, #6e4122, #a05a2c);
+  --creamy-title: #e6c78c;
+}
+
+.footer-gradient {
+  background: var(--brown-gradient);
+}
+
+.title-color {
+  color: var(--creamy-title);
+}
+
+.button-color {
+  background: var(--button-gradient);
+}
+
 body {
   overflow-x: hidden;
 }

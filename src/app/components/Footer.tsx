@@ -1,10 +1,10 @@
 import React from 'react'
 import Image from 'next/image'
-import Link from 'next/link'
+import { Link } from '@/i18n/routing'
 
 const Footer = () => {
   return (
-    <div className="flex flex-col bg-gradient-to-r from-[#3a2213] via-[#6e4122] to-[#a05a2c] py-8 text-white">
+    <div className="flex flex-col footer-gradient py-8 text-white">
       <div className="mx-4 flex flex-col items-start justify-between lg:mx-[20%] lg:flex-row 2xl:mx-[25%]">
         <div>
           <Image
@@ -71,7 +71,7 @@ const Footer = () => {
             <Link href={'/contact'} className="cursor-pointer hover:text-[#e6c78c]">
               Kontakt
             </Link>
-            <Link href={'/technik'} className="cursor-pointer hover:text-[#e6c78c]">
+            <Link href={'/admin'} className="cursor-pointer hover:text-[#e6c78c]">
               Admin
             </Link>
           </div>

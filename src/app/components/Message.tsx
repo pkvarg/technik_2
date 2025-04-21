@@ -9,19 +9,19 @@ const Message: React.FC<MessageProps> = ({ variant = 'info', children }) => {
   return (
     <>
       {variant === 'danger' ? (
-        <div
-          className="text-red-500 border border-red-500 text-[25px] px-4 mb-2 rounded relative text-center"
+        <span
+          className="text-red-500 text-[25px] px-4 my-4 inline-block relative text-center"
           role="alert"
         >
           <strong className="font-bold">{children}</strong>
-        </div>
+        </span>
       ) : (
-        <div
-          className="text-green-600 border border-green-500 text-[25px] px-4 mb-2 rounded relative text-center"
+        <span
+          className="text-green-600 text-[25px] px-4 my-4 inline-block relative text-center"
           role="alert"
         >
           <strong className="font-bold">{children}</strong>
-        </div>
+        </span>
       )}
     </>
   )
