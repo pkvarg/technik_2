@@ -7,6 +7,8 @@ import Navbar from '@/app/components/Navbar'
 const Contact = () => {
   const t = useTranslations('Home')
 
+  console.log('contact')
+
   const contactTranslations = {
     contactTitle: t('contactTitle'),
     contactName: t('contactName'),
