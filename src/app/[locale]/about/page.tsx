@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
 import Navbar from '@/app/components/Navbar'
+import Image from 'next/image'
 
 const KtoSmeComponent = () => {
   const controls = useAnimation()
@@ -123,7 +124,9 @@ const KtoSmeComponent = () => {
               className="relative overflow-hidden rounded-lg shadow-xl"
               variants={imageVariants}
             >
-              <img
+              <Image
+                height={500}
+                width={500}
                 src="/arena.jpg"
                 alt="Komorný orchester Technik"
                 className="w-full h-auto object-cover rounded-lg"

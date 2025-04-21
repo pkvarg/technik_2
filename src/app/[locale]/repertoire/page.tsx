@@ -3,6 +3,7 @@ import Navbar from '@/app/components/Navbar'
 import RepertoireList from '@/app/components/RepertoireList'
 
 const Repertoire = () => {
+  // eslint-disable-next-line
   const compositions: {} = {
     'Anderson Leroy': ['Jazz Pizzicato', 'Plink, Plank, Plunk *'],
     'Bach Johann Sebastian': [

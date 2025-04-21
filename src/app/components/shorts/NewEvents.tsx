@@ -82,7 +82,7 @@ const NewEvents = () => {
     fetch(`${fileName}`).then((response) => {
       response.blob().then((blob) => {
         const fileURL = window.URL.createObjectURL(blob)
-        let alink = document.createElement('a')
+        const alink = document.createElement('a')
         alink.href = fileURL
         alink.download = `${fileName}`
         alink.click()

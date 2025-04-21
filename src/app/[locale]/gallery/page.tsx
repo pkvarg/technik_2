@@ -1,7 +1,7 @@
 'use client'
 import Navbar from '@/app/components/Navbar'
 import React from 'react'
-import { motion, AnimatePresence } from 'framer-motion'
+import { motion } from 'framer-motion'
 
 const Gallery = () => {
   return (

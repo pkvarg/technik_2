@@ -6,7 +6,7 @@ import formatDate from '@/lib/formatDate'
 export default function VisitorCounter() {
   const [lastUpdate, setLastUpdate] = useState('')
   const [count, setCount] = useState<number>(0)
-  // eslint-disable-next-line
+
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 

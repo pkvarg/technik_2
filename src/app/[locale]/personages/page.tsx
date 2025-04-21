@@ -140,7 +140,7 @@ const Personages = () => {
         </div>
 
         {/* Personages sections */}
-        {personages.map((person, index) => (
+        {personages.map((person) => (
           <motion.section
             key={person.name}
             className={`${person.background} overflow-hidden`}
