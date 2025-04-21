@@ -72,33 +72,34 @@ const Navbar = () => {
           >
             <ul className="justify-center space-y-2 text-[20px] md:flex md:space-x-6 md:space-y-0 lg:space-y-0 lg:text-[20px]">
               <li>
-                <Link href={'/'} className="cursor-pointer hover:text-yellow-500">
+                <Link href={'/'} className="cursor-pointer hover:text-[#e6c78c]">
                   Domov
                 </Link>
               </li>
 
               <div className="group relative  cursor-pointer">
                 <div className="flex items-center justify-between lg:px-4">
-                  <a className="menu-hover hover:text-yellow-500">O nás</a>
+                  <a className="menu-hover hover:text-[#e6c78c]">O nás</a>
                 </div>
                 <div className="invisible absolute z-50 flex w-max flex-col  bg-black px-4 py-1 text-white shadow-xl group-hover:visible">
                   {/* <a className="my-2 block py-1  md:mx-2">Product</a> */}
-                  <Link href={'/about'} className="cursor-pointer hover:text-yellow-500">
+                  <Link href={'/about'} className="cursor-pointer hover:text-[#e6c78c]">
                     Kto sme
                   </Link>
-                  <Link href={'/repertoire'} className="cursor-pointer hover:text-yellow-500">
+                  <Link href={'/repertoire'} className="cursor-pointer hover:text-[#e6c78c]">
                     Repertoár
                   </Link>
-                  {/* <Link href={'/about'} className="cursor-pointer hover:text-yellow-500">
-                    Členovia
-                  </Link> */}
-                  <Link href={'/personages'} className="cursor-pointer hover:text-yellow-500">
+
+                  <Link href={'/personages'} className="cursor-pointer hover:text-[#e6c78c]">
                     Osobnosti
                   </Link>
-                  {/* <Link href={'/about'} className="cursor-pointer hover:text-yellow-500">
+                  <Link href={'/concerts'} className="cursor-pointer hover:text-[#e6c78c]">
+                    Koncerty a podujatia
+                  </Link>
+                  {/* <Link href={'/about'} className="cursor-pointer hover:text-[#e6c78c]">
                     Zájazdy
                   </Link> */}
-                  <Link href={'/about'} className="cursor-pointer hover:text-yellow-500">
+                  <Link href={'/history'} className="cursor-pointer hover:text-[#e6c78c]">
                     História
                   </Link>
                 </div>
@@ -107,7 +108,7 @@ const Navbar = () => {
               {/* <li>
                   <Link
                     href={'/gallery'}
-                    className="cursor-pointer hover:text-yellow-500"
+                    className="cursor-pointer hover:text-[#e6c78c]"
                   >
                     Galéria
                   </Link>
@@ -115,23 +116,23 @@ const Navbar = () => {
 
               <div className="group relative  cursor-pointer">
                 <div className="flex items-center justify-between lg:px-4">
-                  <a className="menu-hover hover:text-yellow-500">Galéria</a>
+                  <a className="menu-hover hover:text-[#e6c78c]">Galéria</a>
                 </div>
                 <div className="invisible absolute z-50 flex w-max flex-col  bg-black px-4 py-1 text-white shadow-xl group-hover:visible">
-                  <Link href={'/gallery'} className="cursor-pointer hover:text-yellow-500">
-                    Fotky
+                  <Link href={'/gallery'} className="cursor-pointer hover:text-[#e6c78c]">
+                    Foto
                   </Link>
-                  <Link href={'/audio'} className="cursor-pointer hover:text-yellow-500">
+                  <Link href={'/audio'} className="cursor-pointer hover:text-[#e6c78c]">
                     Audio
                   </Link>
-                  <Link href={'/video'} className="cursor-pointer hover:text-yellow-500">
+                  <Link href={'/video'} className="cursor-pointer hover:text-[#e6c78c]">
                     Video
                   </Link>
                 </div>
               </div>
 
               <li>
-                <Link href={'/contact'} className="cursor-pointer hover:text-yellow-500">
+                <Link href={'/contact'} className="cursor-pointer hover:text-[#e6c78c]">
                   Kontakt
                 </Link>
               </li>

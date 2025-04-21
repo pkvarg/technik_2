@@ -1,6 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import { motion, useAnimation } from 'framer-motion'
+import Navbar from '@/app/components/Navbar'
 
 const KtoSmeComponent = () => {
   const controls = useAnimation()
@@ -47,13 +48,17 @@ const KtoSmeComponent = () => {
 
   return (
     <div className="bg-black text-white min-h-screen font-sans">
+      <Navbar />
       <motion.div
         className="container mx-auto px-4 py-16"
         initial="hidden"
         animate={controls}
         variants={containerVariants}
       >
-        <motion.h1 className="text-5xl font-bold mb-2" variants={itemVariants}>
+        <motion.h1
+          className="mt-4 text-center text-4xl md:text-5xl font-serif text-[#e6c78c]"
+          variants={itemVariants}
+        >
           Kto sme
         </motion.h1>
 
@@ -62,10 +67,10 @@ const KtoSmeComponent = () => {
           variants={containerVariants}
         >
           <motion.div variants={itemVariants}>
-            <h2 className="text-2xl font-semibold mb-6 text-blue-400">
+            <h2 className="text-2xl font-semibold mb-6 text-white">
               Slovo o súbore / Charakteristika hudobného kolektívu:
             </h2>
-            <div className="space-y-4 text-gray-300 text-justify">
+            <div className="space-y-4 text-[#e6c78c] text-justify text-lg">
               <p>
                 Komorný orchester Technik je súčasťou Vysokoškolského umeleckého súboru TECHNIK,
                 ktorý už viac než 70 rokov pôsobí na pôde Slovenskej technickej univerzity.

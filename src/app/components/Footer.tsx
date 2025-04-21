@@ -1,10 +1,10 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
+import React from 'react'
+import Image from 'next/image'
+import Link from 'next/link'
 
 const Footer = () => {
   return (
-    <div className="flex flex-col bg-[#02144B] py-8 text-white">
+    <div className="flex flex-col bg-gradient-to-r from-[#3a2213] via-[#6e4122] to-[#a05a2c] py-8 text-white">
       <div className="mx-4 flex flex-col items-start justify-between lg:mx-[20%] lg:flex-row 2xl:mx-[25%]">
         <div>
           <Image
@@ -30,26 +30,16 @@ const Footer = () => {
             <p>
               {' '}
               a{' '}
-              <a
-                href="https://www.stuba.sk/"
-                target="_blank"
-                className="cursor-pointer underline"
-              >
+              <a href="https://www.stuba.sk/" target="_blank" className="cursor-pointer underline">
                 STU Bratislava
               </a>
             </p>
           </div>
 
-          <p className="mt-0">
-            {' '}
-            &copy; {Date().substring(11, 15)} Komorný orchester Technik
-          </p>
+          <p className="mt-0"> &copy; {Date().substring(11, 15)} Komorný orchester Technik</p>
           {/* <p>Sledujte nás</p> */}
           <div className="flex flex-row items-center gap-4">
-            <a
-              href="https://www.facebook.com/orchester.technik"
-              target="_blank"
-            >
+            <a href="https://www.facebook.com/orchester.technik" target="_blank">
               <Image
                 src={'/facebook.png'}
                 alt="facebook"
@@ -58,10 +48,7 @@ const Footer = () => {
                 className="h-[25px] w-[30.5px]"
               />
             </a>
-            <a
-              href="https://www.youtube.com/channel/UCN5EhFknLnEjzKUPCZfg7FA"
-              target="_blank"
-            >
+            <a href="https://www.youtube.com/channel/UCN5EhFknLnEjzKUPCZfg7FA" target="_blank">
               <Image
                 src={'/youtube.png'}
                 alt="youtube"
@@ -78,29 +65,20 @@ const Footer = () => {
             className="flex flex-col text-[20px]
            font-bold"
           >
-            <Link
-              href={'/partners'}
-              className="cursor-pointer hover:text-yellow-500"
-            >
+            <Link href={'/partners'} className="cursor-pointer hover:text-[#e6c78c]">
               Partneri
             </Link>
-            <Link
-              href={'/contact'}
-              className="cursor-pointer hover:text-yellow-500"
-            >
+            <Link href={'/contact'} className="cursor-pointer hover:text-[#e6c78c]">
               Kontakt
             </Link>
-            <Link
-              href={'/technik'}
-              className="cursor-pointer hover:text-yellow-500"
-            >
+            <Link href={'/technik'} className="cursor-pointer hover:text-[#e6c78c]">
               Admin
             </Link>
           </div>
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Footer;
+export default Footer

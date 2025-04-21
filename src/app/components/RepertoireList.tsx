@@ -1,12 +1,12 @@
-import React from 'react';
-import { BsMusicNoteList } from 'react-icons/bs';
+import React from 'react'
+import { BsMusicNoteList } from 'react-icons/bs'
 
 interface Compositions {
-  [key: string]: string[];
+  [key: string]: string[]
 }
 
 interface Props {
-  compositions: Compositions;
+  compositions: Compositions
 }
 
 const RepertoireList: React.FC<Props> = ({ compositions }) => {
@@ -19,7 +19,7 @@ const RepertoireList: React.FC<Props> = ({ compositions }) => {
         >
           <BsMusicNoteList className="mt-[7px] w-[10%] lg:w-[auto]" />
 
-          <h2 className="w-[35%] text-[20px]  text-yellow-500 lg:w-[auto] lg:text-[25px]">
+          <h2 className="w-[35%] text-[20px]  text-[#e6c78c] lg:w-[auto] lg:text-[25px]">
             {composer}
           </h2>
           <ul className="ml-auto mt-[7px]  w-[55%] text-[15px] lg:w-[auto] lg:text-[20px]">
@@ -32,7 +32,7 @@ const RepertoireList: React.FC<Props> = ({ compositions }) => {
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default RepertoireList;
+export default RepertoireList

@@ -1,12 +1,7 @@
 'use client'
-import { useRouter } from 'next/navigation'
 import Navbar from './Navbar'
 
-//import WhatsApp from './components/WhatsApp';
-
 export default function Hero() {
-  const router = useRouter()
-
   return (
     <main className="relative  bg-[#0d0e2f]">
       <div className="techhero h-screen lg:h-[100vh]">

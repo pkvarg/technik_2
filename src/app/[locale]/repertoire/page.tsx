@@ -95,7 +95,7 @@ const Repertoire = () => {
   return (
     <div className="bg-black text-white">
       <Navbar />
-      <h1 className="mt-4 text-center text-[35px] text-yellow-500">
+      <h1 className="mt-4 text-center text-[35px] text-[#e6c78c]">
         Repertoár komorného orchestra Technik
       </h1>
       <div
