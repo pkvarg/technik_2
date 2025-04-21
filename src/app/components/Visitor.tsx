@@ -6,36 +6,36 @@ import formatDate from '@/lib/formatDate'
 export default function VisitorCounter() {
   const [lastUpdate, setLastUpdate] = useState('')
   const [count, setCount] = useState<number>(0)
-
+  // eslint-disable-next-line
   const [loading, setLoading] = useState<boolean>(false)
   const [error, setError] = useState<string | null>(null)
 
-  const createVisitor = async () => {
-    try {
-      setLoading(true)
-      setError(null)
+  // const createVisitor = async () => {
+  //   try {
+  //     setLoading(true)
+  //     setError(null)
 
-      const response = await fetch('/api/visitors', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ count: 0 }),
-      })
+  //     const response = await fetch('/api/visitors', {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //       },
+  //       body: JSON.stringify({ count: 0 }),
+  //     })
 
-      if (!response.ok) {
-        throw new Error('Failed to create visitor')
-      }
+  //     if (!response.ok) {
+  //       throw new Error('Failed to create visitor')
+  //     }
 
-      const data = await response.json()
+  //     const data = await response.json()
 
-      setCount(data.count)
-    } catch (err) {
-      setError(err instanceof Error ? err.message : 'An unknown error occurred')
-    } finally {
-      setLoading(false)
-    }
-  }
+  //     setCount(data.count)
+  //   } catch (err) {
+  //     setError(err instanceof Error ? err.message : 'An unknown error occurred')
+  //   } finally {
+  //     setLoading(false)
+  //   }
+  // }
 
   const getVisitor = async () => {
     try {

@@ -112,12 +112,10 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
           subject,
         }
 
-        console.log('sendData', sendData)
-
         const apiUrl =
           process.env.NODE_ENV === 'development'
             ? 'http://localhost:3013/api/contact'
-            : process.env.API_URL!
+            : process.env.NEXT_PUBLIC_API_URL!
 
         // Make the API request
         const response = await fetch(apiUrl, {
@@ -128,7 +126,6 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
           body: JSON.stringify(sendData),
         })
 
-        console.log('contact response', response)
         // Check if request was successful
         if (!response.ok) {
           const errorData = await response.json()
@@ -140,8 +137,6 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
 
         // Return success response
         const data = await response.json()
-
-        console.log('returned data', data)
 
         setName('')
         setPhone('')
