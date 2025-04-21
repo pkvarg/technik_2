@@ -77,7 +77,7 @@ export default function VisitorCounter() {
         <p className="text-2xl font-bold mt-2">Last visit: {lastUpdate}</p>
       </div>
 
-      <div className="flex flex-col gap-2">
+      {/* <div className="flex flex-col gap-2">
         <button
           onClick={createVisitor}
           disabled={loading}
@@ -85,7 +85,7 @@ export default function VisitorCounter() {
         >
           {loading ? 'Creating...' : 'Create Visitor'}
         </button>
-      </div>
+      </div> */}
 
       {error && (
         <div className="mt-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">

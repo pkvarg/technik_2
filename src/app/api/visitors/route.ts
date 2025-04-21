@@ -10,7 +10,7 @@ export async function GET() {
     // Create visitor
     const visitor = await prisma.visitor.findFirst({
       where: {
-        id: '67c37244827720bbde23f5ad',
+        id: '6806919cea18590661802a65',
       },
     })
     // Return successful response
@@ -82,7 +82,7 @@ export async function PATCH() {
   try {
     const visitor = await prisma.visitor.findFirst({
       where: {
-        id: '67c37244827720bbde23f5ad',
+        id: '6806919cea18590661802a65',
       },
     })
 
@@ -91,7 +91,7 @@ export async function PATCH() {
 
     // Update visitor
     const updatedVisitor = await prisma.visitor.update({
-      where: { id: '67c37244827720bbde23f5ad' },
+      where: { id: '6806919cea18590661802a65' },
       data: {
         count: newCount,
         updatedAt: new Date(),
