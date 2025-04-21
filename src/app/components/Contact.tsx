@@ -112,10 +112,12 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
           subject,
         }
 
-        const apiUrl =
-          process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3013/api/contact'
-            : process.env.NEXT_PUBLIC_API_URL!
+        // const apiUrl =
+        //   process.env.NODE_ENV === 'development'
+        //     ? 'http://localhost:3013/api/contact'
+        //     : process.env.NEXT_PUBLIC_API_URL!
+
+        const apiUrl = 'https://hono-api.pictusweb.com/api/contact'
 
         // Make the API request
         const response = await fetch(apiUrl, {
