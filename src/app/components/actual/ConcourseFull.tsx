@@ -123,7 +123,7 @@ const ConcourseFull = () => {
             </p>
 
             {/* Practice details with icons */}
-            <div className="bg-white/10 rounded-lg p-5 backdrop-blur-sm">
+            <div className="bg-white/10 rounded-lg p-5 backdrop-blur-sm text-[16px] lg:text-[18.5px]">
               <h3 className="text-xl font-semibold text-amber-200 mb-3">Nácviky orchestra</h3>
               <div className="flex items-start gap-3 mb-3">
                 <MdCalendarMonth className="text-2xl text-amber-200 mt-1" />
@@ -134,7 +134,7 @@ const ConcourseFull = () => {
                 <span>19:30 – 22:00 hod. (okrem obdobia letných školských prázdnin)</span>
               </div>
               <div className="flex items-start gap-3">
-                <MdLocationOn className="text-2xl text-amber-200 mt-1" />
+                <MdLocationOn className="text-6xl text-amber-200 mt-1" />
                 <div>
                   <p>Rektorát Slovenskej technickej univerzity v Bratislave</p>
                   <p>Vazovova ul. č. 5, miestnosť UE 123</p>
