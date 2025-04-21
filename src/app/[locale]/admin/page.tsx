@@ -10,7 +10,7 @@ import { Link } from '@/i18n/routing'
 const Admin = async () => {
   const session = await auth()
   return (
-    <main className="footer-gradient text-white">
+    <main className="footer-gradient text-white px-6">
       <PagesNavbarServer />
       <div className="container py-8 space-y-8">
         <h1>Admin</h1>
