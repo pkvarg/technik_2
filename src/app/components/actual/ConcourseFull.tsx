@@ -130,13 +130,15 @@ const ConcourseFull = () => {
                 <span>Každý pondelok a stredu</span>
               </div>
               <div className="flex items-start gap-3 mb-3">
-                <MdAccessTime className="text-2xl text-amber-200 mt-1" />
-                <span>19:30 – 22:00 hod. (okrem obdobia letných školských prázdnin)</span>
+                <MdAccessTime className="ml-[2px] lg:ml-0 text-[20px] lg:text-[22.5px] text-amber-200 mt-1" />
+                <span className="text-[15px] lg:text-[18.5px]">
+                  19:30 – 22:00 hod. <br /> (okrem letných prázdnin)
+                </span>
               </div>
               <div className="flex items-start gap-3">
-                <MdLocationOn className="text-6xl text-amber-200 mt-1" />
-                <div>
-                  <p>Rektorát Slovenskej technickej univerzity v Bratislave</p>
+                <MdLocationOn className="text-[105px] md:text-[35px] lg:text-[55px] xl:text-[25px] text-amber-200 mt-1" />
+                <div className="text-[15px] lg:text-[18.5px]">
+                  <p>Rektorát STU v Bratislave</p>
                   <p>Vazovova ul. č. 5, miestnosť UE 123</p>
                   <p className="text-sm text-amber-100/80 mt-2 italic">
                     (vojdeš do budovy, prejdeš po vstupných schodoch vestibulom okolo vrátnice, choď

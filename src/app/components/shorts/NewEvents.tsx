@@ -125,8 +125,8 @@ const NewEvents = () => {
               <span className="font-medium">19:00</span>
             </div>
             <div className="flex items-center gap-3">
-              <MdLocationOn className="text-2xl text-amber-200" />
-              <span className="font-medium">
+              <MdLocationOn className="text-[40px] lg:text-2xl text-amber-200" />
+              <span className="font-medium text-[15px] lg:text-[18.5px]">
                 Koncertná sieň Dvorana VŠMU, Zochova 1, Bratislava
               </span>
             </div>
