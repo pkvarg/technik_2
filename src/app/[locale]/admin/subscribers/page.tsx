@@ -1,5 +1,5 @@
 'use client'
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useCallback } from 'react'
 import axios from 'axios'
 import { toast } from 'react-hot-toast'
 import { Link } from '@/i18n/routing'
@@ -18,7 +18,8 @@ const Subscribers = () => {
   const [sortDirection, setSortDirection] = useState<'asc' | 'desc'>('desc')
 
   // Fetch subscribers
-  const fetchSubscribers = async () => {
+  // Memoize the fetchSubscribers function with useCallback
+  const fetchSubscribers = useCallback(async () => {
     try {
       setLoading(true)
       const response = await axios.get('/api/subscribe')
@@ -39,7 +40,12 @@ const Subscribers = () => {
     } finally {
       setLoading(false)
     }
-  }
+  }, [sortDirection]) // Include sortDirection as a dependency
+
+  // Now you can safely include fetchSubscribers in the useEffect dependency array
+  useEffect(() => {
+    fetchSubscribers()
+  }, [fetchSubscribers]) // This will only run when fetchSubscribers changes (when sortDirection changes)
 
   // Delete subscriber
   const deleteSubscriber = async (id: string) => {
@@ -77,11 +83,6 @@ const Subscribers = () => {
   const filteredSubscribers = subscribers.filter((subscriber) =>
     subscriber.email.toLowerCase().includes(searchTerm.toLowerCase()),
   )
-
-  // Fetch subscribers on component mount and when sort direction changes
-  useEffect(() => {
-    fetchSubscribers()
-  }, [sortDirection, fetchSubscribers])
 
   // Copy all emails to clipboard
   const copyEmailsToClipboard = () => {

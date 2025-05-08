@@ -81,7 +81,7 @@ const MailingList = () => {
                 <div className="flex items-center h-5">
                   <input id="terms" type="checkbox" required className="w-4 h-4 accent-amber-500" />
                 </div>
-                <div className="ml-3">
+                <div className="ml-3 -mt-[2.5px]">
                   <label htmlFor="terms" className="text-sm">
                     <span className="cursor-pointer" onClick={() => setShowAgree(!showAgree)}>
                       Súhlasím so spracovaním údajov
