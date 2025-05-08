@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from 'next/font/google'
 import './globals.css'
 import FooterServerComponent from './components/translationServerComponents/FooterServerComponent'
 import { NextIntlClientProvider } from 'next-intl'
+import { Toaster } from 'react-hot-toast'
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -34,6 +35,7 @@ export default async function RootLayout({
     <html lang={(await params).lang}>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider>
+          <Toaster />
           {children}
           <FooterServerComponent />
         </NextIntlClientProvider>

@@ -81,28 +81,6 @@ export default function ProductManager() {
     setImageFile(file)
   }
 
-  const uploadImage = async (file: File): Promise<string> => {
-    const formData = new FormData()
-    formData.append('file', file)
-
-    try {
-      const response = await fetch('/api/upload', {
-        method: 'POST',
-        body: formData,
-      })
-
-      if (!response.ok) {
-        throw new Error('Failed to upload image')
-      }
-
-      const data = await response.json()
-      return data.imageUrl
-    } catch (err) {
-      console.error('Error uploading image:', err)
-      throw new Error('Failed to upload image')
-    }
-  }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setLoading(true)
@@ -114,17 +92,31 @@ export default function ProductManager() {
 
       // If there's a file to upload, upload it first
       if (imageFile) {
-        finalImageUrl = await uploadImage(imageFile)
+        const formData = new FormData()
+        formData.append('file', imageFile)
+
+        const apiUrl = 'http://localhost:3013/api/upload/technik'
+
+        const response = await fetch(apiUrl, {
+          method: 'POST',
+          body: formData,
+        })
+
+        if (!response.ok) {
+          throw new Error('Failed to upload image')
+        }
+
+        const data = await response.json()
+        finalImageUrl = data.imageUrl
       }
 
       const productData = {
         ...formData,
-        imageUrl: finalImageUrl,
+        imageUrl: finalImageUrl, // Use the uploaded image URL or existing one
       }
 
       // Determine if we're creating or updating
       const url = editingId ? `/api/products/${editingId}` : '/api/products'
-
       const method = editingId ? 'PUT' : 'POST'
 
       const response = await fetch(url, {
@@ -282,7 +274,8 @@ export default function ProductManager() {
                 <Image
                   src={imagePreview}
                   alt="Image preview"
-                  fill
+                  width={100}
+                  height={100}
                   style={{ objectFit: 'contain' }}
                 />
               </div>
@@ -355,7 +348,7 @@ export default function ProductManager() {
             {products.map((product) => (
               <div key={product.id} className="p-3 border rounded">
                 <div className="flex justify-between">
-                  <h4 className="font-bold text-white">{product.name}x</h4>
+                  <h4 className="font-bold text-white">{product.name}</h4>
                   <span
                     className={`text-xs px-2 py-1 rounded ${
                       product.available === 'áno'
@@ -376,7 +369,8 @@ export default function ProductManager() {
                     <Image
                       src={product.imageUrl}
                       alt={product.name}
-                      fill
+                      width={100}
+                      height={100}
                       style={{ objectFit: 'contain' }}
                     />
                   </div>

@@ -1,29 +1,11 @@
 // app/api/products/[id]/route.ts
 import { NextRequest, NextResponse } from 'next/server'
 import db from '@/db/db'
-import { unlink } from 'fs/promises'
-import { join } from 'path'
-import { existsSync } from 'fs'
-
-// Helper function to remove file if it exists
-async function removeImageIfExists(imageUrl: string) {
-  if (imageUrl && imageUrl.startsWith('/uploads/')) {
-    try {
-      const filePath = join(process.cwd(), 'public', imageUrl)
-      if (existsSync(filePath)) {
-        await unlink(filePath)
-      }
-    } catch (error) {
-      console.error('Error removing image file:', error)
-    }
-  }
-}
 
 // eslint-disable-next-line
 export async function GET(request: NextRequest, { params }: { params: any }) {
-  console.log('type****', typeof params)
   try {
-    const { id } = params
+    const { id } = await params
 
     const product = await db.product.findUnique({
       where: { id },
@@ -43,7 +25,7 @@ export async function GET(request: NextRequest, { params }: { params: any }) {
 // eslint-disable-next-line
 export async function PUT(request: NextRequest, { params }: { params: any }) {
   try {
-    const { id } = params
+    const { id } = await params
     const body = await request.json()
 
     // Check if product exists
@@ -53,14 +35,6 @@ export async function PUT(request: NextRequest, { params }: { params: any }) {
 
     if (!existingProduct) {
       return NextResponse.json({ error: 'Product not found' }, { status: 404 })
-    }
-
-    // If image URL changed and old one was in uploads, delete old image
-    if (
-      existingProduct.imageUrl !== body.imageUrl &&
-      existingProduct.imageUrl.startsWith('/uploads/')
-    ) {
-      await removeImageIfExists(existingProduct.imageUrl)
     }
 
     // Update product
@@ -85,7 +59,7 @@ export async function PUT(request: NextRequest, { params }: { params: any }) {
 // eslint-disable-next-line
 export async function DELETE(request: NextRequest, { params }: { params: any }) {
   try {
-    const { id } = params
+    const { id } = await params
 
     // Get product first to get image URL
     const product = await db.product.findUnique({
@@ -100,9 +74,6 @@ export async function DELETE(request: NextRequest, { params }: { params: any }) 
     await db.product.delete({
       where: { id },
     })
-
-    // Delete associated image if it exists in uploads folder
-    await removeImageIfExists(product.imageUrl)
 
     return NextResponse.json({ success: true })
   } catch (error) {

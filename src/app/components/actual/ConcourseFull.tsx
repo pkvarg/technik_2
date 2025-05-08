@@ -75,6 +75,7 @@ import React from 'react'
 import Image from 'next/image'
 import EmailTel from './EmailTel'
 import { MdAccessTime, MdLocationOn, MdCalendarMonth, MdPeople } from 'react-icons/md'
+import MailingList from '../MailingList'
 
 const ConcourseFull = () => {
   return (
@@ -179,6 +180,9 @@ const ConcourseFull = () => {
           <div className="bg-white/10 p-6 rounded-lg w-full shadow-lg backdrop-blur-sm">
             <h3 className="text-xl font-semibold text-amber-200 mb-4 text-center">Kontaktuj nás</h3>
             <EmailTel />
+            <div className="p-4">
+              <MailingList />
+            </div>
           </div>
         </div>
       </div>

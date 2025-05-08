@@ -1,4 +1,5 @@
 'use client'
+import MailingList from './MailingList'
 import Navbar from './Navbar'
 import ConcourseShort from './shorts/ConcourseShort'
 import NewEvents from './shorts/NewEvents'
@@ -31,9 +32,9 @@ export default function Hero() {
       </div> */}
 
       <NewEvents />
-      {/* <MailingList /> */}
 
       <ConcourseShort />
+      <MailingList />
     </main>
   )
 }
