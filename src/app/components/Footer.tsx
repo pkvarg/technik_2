@@ -1,10 +1,93 @@
-import React from 'react'
+'use client'
+import React, { FC } from 'react'
 import Image from 'next/image'
 import { Link } from '@/i18n/routing'
+import CookieConsent from 'react-cookie-consent'
 
-const Footer = () => {
+interface TranslationProps {
+  translations: {
+    cookies: string
+    agree: string
+    disagree: string
+  }
+}
+
+const Footer: FC<TranslationProps> = ({ translations }) => {
+  const { cookies, agree, disagree } = translations
+
+  const apiUrl = 'https://hono-api.pictusweb.com/api/visitors/technik/increase'
+  //const apiUrl = 'http://localhost:3013/api/visitors/technik/increase'
+
+  const incrementCount = async () => {
+    try {
+      const response = await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      if (!response.ok) {
+        throw new Error('Failed to increment count')
+      }
+    } catch (err) {
+      console.log(err instanceof Error ? err.message : 'An unknown error occurred')
+    }
+  }
+
   return (
     <div className="flex flex-col footer-gradient py-8 text-white">
+      <CookieConsent
+        location="bottom"
+        style={{
+          background: '#0e0d0d', // Dark background (nearly black)
+          backdropFilter: 'blur(10px)',
+          color: '#ffffff',
+          fontSize: '16px',
+          textAlign: 'start',
+          borderTop: '1px solid #E6C78B',
+          boxShadow: '0 -5px 20px rgba(0, 0, 0, 0.3)',
+          padding: '16px 24px',
+        }}
+        buttonStyle={{
+          background: '#E6C78B',
+          color: '#0e0d0d', // Nearly black text
+          fontSize: '16px',
+          fontWeight: 'bold',
+          padding: '10px 24px',
+          borderRadius: '8px',
+          border: 'none',
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+        }}
+        buttonText={agree}
+        expires={365}
+        enableDeclineButton
+        onDecline={() => {
+          incrementCount()
+        }}
+        declineButtonStyle={{
+          background: 'transparent',
+          color: '#fff',
+          fontSize: '16px',
+          fontWeight: 'bold',
+          padding: '8px 24px',
+          borderRadius: '8px',
+          border: `2px solid #E6C78B`, // Techniks border
+          cursor: 'pointer',
+          transition: 'all 0.3s ease',
+          marginRight: '10px',
+        }}
+        declineButtonText={disagree}
+        onAccept={() => {
+          incrementCount()
+        }}
+        contentStyle={{
+          flex: '1',
+          margin: '0',
+        }}
+      >
+        {cookies}
+      </CookieConsent>
       <div className="mx-4 flex flex-col items-start justify-between lg:mx-[20%] lg:flex-row 2xl:mx-[25%]">
         <div>
           <Image
