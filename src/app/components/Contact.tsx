@@ -65,6 +65,39 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
     setCheckBox((current) => !current)
   }
 
+  const increaseBots = async () => {
+    const apiUrl = 'https://hono-api.pictusweb.com/api/bots/technik/increase'
+    //const apiUrl = 'http://localhost:3013/api/bots/technik/increase'
+    try {
+      await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+
+      //console.log('data bots', data)
+    } catch (error) {
+      console.error('Error increasing bots:', error)
+    }
+  }
+
+  const increaseEmails = async () => {
+    const apiUrl = 'https://hono-api.pictusweb.com/api/emails/technik/increase'
+    //const apiUrl = 'http://localhost:3013/api/emails/technik/increase'
+    try {
+      await fetch(apiUrl, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      })
+      //console.log('data email', data)
+    } catch (error) {
+      console.error('Error increasing emails:', error)
+    }
+  }
+
   const form = useRef<HTMLFormElement>(null)
   const x = process.env.EMAIL_EXTRA_ONE
   const y = process.env.EMAIL_EXTRA_TWO
@@ -91,6 +124,7 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
       setEmail('')
       setPhone('')
       setMailMessage('')
+      increaseBots()
 
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
     } else {
@@ -145,6 +179,7 @@ const ContactComponent: FC<TranslationProps> = ({ translations }) => {
         setEmail('')
         setMailMessage('')
         setMessageSuccess(contactSuccess)
+        increaseEmails()
 
         return {
           success: true,
