@@ -1,6 +1,7 @@
 // app/api/visitors/route.ts
 import { NextResponse, NextRequest } from 'next/server'
-import { PrismaClient } from '@prisma/client'
+//import { PrismaClient } from '@prisma/client'
+import { PrismaClient } from '../../../prisma/generated'
 
 const prisma = new PrismaClient()
 
