@@ -142,7 +142,7 @@ const config = {
       "value": "prisma-client-js"
     },
     "output": {
-      "value": "/Users/pictus/PW-Local-Projects/technik_2_new/src/prisma/generated/prisma",
+      "value": "/home/pic/Desktop/Technik2_new_node/technik_2/src/prisma/generated/prisma",
       "fromEnvVar": null
     },
     "config": {
@@ -151,17 +151,16 @@ const config = {
     "binaryTargets": [
       {
         "fromEnvVar": null,
-        "value": "darwin-arm64",
+        "value": "linux-arm64-openssl-3.0.x",
         "native": true
       }
     ],
     "previewFeatures": [],
-    "sourceFilePath": "/Users/pictus/PW-Local-Projects/technik_2_new/src/prisma/schema.prisma",
+    "sourceFilePath": "/home/pic/Desktop/Technik2_new_node/technik_2/src/prisma/schema.prisma",
     "isCustomOutput": true
   },
   "relativeEnvPaths": {
-    "rootEnvPath": null,
-    "schemaEnvPath": "../../../../.env"
+    "rootEnvPath": null
   },
   "relativePath": "../..",
   "clientVersion": "6.6.0",
@@ -170,7 +169,7 @@ const config = {
     "db"
   ],
   "activeProvider": "mongodb",
-  "postinstall": false,
+  "postinstall": true,
   "inlineDatasources": {
     "db": {
       "url": {
