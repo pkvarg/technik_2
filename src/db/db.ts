@@ -15,8 +15,8 @@
 
 // if (process.env.NODE_ENV !== 'production') globalThis.prisma = db
 
-//import { PrismaClient } from '@prisma/client'
-import { PrismaClient } from './../prisma/generated/prisma/client'
+import { PrismaClient } from '@prisma/client'
+//import { PrismaClient } from './../prisma/generated/prisma/client'
 
 // Define the type for the global prisma instance
 declare global {
