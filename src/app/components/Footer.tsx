@@ -34,6 +34,14 @@ const Footer: FC<TranslationProps> = ({ translations }) => {
     }
   }
 
+  const loadUmamiScript = () => {
+    const script = document.createElement('script')
+    script.defer = true
+    script.src = 'https://umami-p00gs00gwcwo00s4k4c4kgg8.pictusweb.com/script.js'
+    script.setAttribute('data-website-id', '976e3952-8188-4681-95fb-42296c85b8b1')
+    document.head.appendChild(script)
+  }
+
   return (
     <div className="flex flex-col footer-gradient py-8 text-white">
       <CookieConsent
@@ -79,6 +87,7 @@ const Footer: FC<TranslationProps> = ({ translations }) => {
         }}
         declineButtonText={disagree}
         onAccept={() => {
+          loadUmamiScript()
           incrementCount()
         }}
         contentStyle={{

@@ -33,9 +33,7 @@ export default async function RootLayout({
 }>) {
   return (
     <html lang={(await params).lang}>
-      <head>
-        <script defer src="https://umami-p00gs00gwcwo00s4k4c4kgg8.pictusweb.com/script.js" data-website-id="976e3952-8188-4681-95fb-42296c85b8b1"></script>
-      </head>
+      <head></head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
         <NextIntlClientProvider>
           <Toaster />
